@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM docker:latest
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
