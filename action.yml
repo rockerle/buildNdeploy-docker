@@ -13,3 +13,6 @@ inputs:
     description: 'Docker restart policy for the container'
     required: false
     default: unless-stopped
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
