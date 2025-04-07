@@ -1,15 +1,15 @@
 name: 'Build and Deploy - Docker'
 description: 'Test Github action for me that replaces a running docker container with an updated image'
 inputs:
-  image-name:
+  imagename:
     description: 'Name of the docker image'
     required: false
     default: 'default-iName'
-  container-name:
+  containername:
     description: 'Name of the docker container that gets deployed'
     required: false
     default: 'default-cName'
-  restart-policy:
+  restartpolicy:
     description: 'Docker restart policy for the container'
     required: false
     default: unless-stopped

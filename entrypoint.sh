@@ -2,10 +2,10 @@
 
 printenv > .env
 
-docker stop $(container-name)
-docker rm $(container-name)
+docker stop "$containername"
+docker rm "$containername"
 
-docker build --no-cache -t $(image-name) .
-docker run -d --env-file .env --restart $(restart-policy) --name $(container-name)
+docker build --no-cache -t "$imagename" .
+docker run -d --env-file .env --restart "$restartpolicy" --name "$containername"
 
 yes | docker system prune
