@@ -21,9 +21,9 @@ runs:
             echo "container name: ${{inputs.containername}}"
             echo "restart policy: ${{inputs.restartpolicy}}"
           shell: bash
-        - run: $GITHUB_ACTION_PATH/entrypoint.sh
-          env:
-            imagename: ${{inputs.imagename}}
-            containername: ${{inputs.containername}}
-            restartpolicy: ${{inputs.restartpolicy}}
+        - run: |
+            export IMAGENAME="${{inputs.imagename}}"
+            export CONTAINERNAME="${{inputs.containername}}"
+            export RESTARTPOLICY="${{inputs.restartpolicy}}"
+            $GITHUB_ACTION_PATH/entrypoint.sh
           shell: bash
