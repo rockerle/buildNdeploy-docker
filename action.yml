@@ -16,5 +16,9 @@ inputs:
 runs:
     using: 'composite'
     steps:
+        - run: |
+            echo "image name: ${{inputs.imagename}}"
+            echo "container name: ${{inputs.containername}}"
+            echo "restart policy: ${{inputs.restartpolicy}}"
         - run: $GITHUB_ACTION_PATH/entrypoint.sh
           shell: bash
