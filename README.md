@@ -6,6 +6,7 @@ The action is made for self-hosted runner. For my case it is made to replace a d
 # Usage
 
 Here is an example workflow how I use the action for my discord bot, when I update its codebase in my self hosted Forgejo instance.
+For additional inputs the env-variables can be defined and will be forwarded to the docker container on startup.
 
 ```yaml
 name: custom action workflow
@@ -24,7 +25,6 @@ jobs:
         with:
           imagename: "rockerle/discordbot:latest"
           containername: "rockerbot"
-          restartpolicy: "unless-stopped"
         env:
           BOT_TOKEN: ${{secrets.BOT_TOKEN}}
 ```
