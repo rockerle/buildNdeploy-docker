@@ -22,4 +22,8 @@ runs:
             echo "restart policy: ${{inputs.restartpolicy}}"
           shell: bash
         - run: $GITHUB_ACTION_PATH/entrypoint.sh
+          with:
+            imagename: ${{inputs.imagename}}
+            containername: ${{inputs.containername}}
+            restartpolicy: ${{inputs.restartpolicy}}
           shell: bash
