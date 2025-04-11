@@ -1,11 +1,11 @@
 #!/bin/sh -l
 
 echo "image name"
-echo "${{INPUTS.IMAGENAME}}"
+echo "$INPUTS_IMAGENAME"
 echo "container name"
-echo "${{INPUTS.CONTAINERNAME}}"
+echo "$INPUTS_CONTAINERNAME"
 echo "restart policy"
-echo "${{INPUTS.RESTARTPOLICY}}"
+echo "$INPUTS_RESTARTPOLICY"
 
 printenv > .env
 docker stop "$INPUT_CONTAINERNAME" || echo "No container running with that name"
