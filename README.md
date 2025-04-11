@@ -1,5 +1,38 @@
-# buildNdeploy-docker
+# Rebuild and Restart a docker container
 
-Github Action from me for me to update a Discord bot.
+My first selfmade Github Action from me for me to stop a docker container, build a new image with the updated codebase and start the new container.
+The action is made for self-hosted runner. For my case it is made to replace a discord bot on my home server, that I update from time to time.
 
-When I upload new code to my selfhosted Forgejo instance this Action will/should build a new docker image and swap the container.
+# Usage
+
+Here is an example workflow how I use the action for my discord bot, when I update its codebase in my self hosted Forgejo instance.
+
+```yaml
+name: custom action workflow
+on:
+  push:
+    branches:
+      - main
+jobs:
+  CnD:
+    runs-on: self-hosted
+    steps:
+      - name: "Checkout Repository"
+        uses: actions/checkout@v4
+      - name: "My self made build and deploy"
+        uses: rockerle/buildNdeploy-docker@v1
+        with:
+          imagename: "rockerle/discordbot:latest"
+          containername: "rockerbot"
+          restartpolicy: "unless-stopped"
+        env:
+          BOT_TOKEN: ${{secrets.BOT_TOKEN}}
+```
+
+# Variables
+
+| Input | default value |
+|:----- | :------------ |
+|imagename | default-iName |
+|containername | default-cName |
+|restartpolicy | unless-stopped |

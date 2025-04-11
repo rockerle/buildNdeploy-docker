@@ -1,4 +1,4 @@
-name: 'Build and Deploy - Docker'
+name: 'Rebuild and Restart a Docker Container'
 description: 'Test Github action for me that replaces a running docker container with an updated image'
 inputs:
   imagename:
@@ -14,5 +14,7 @@ inputs:
     required: false
     default: unless-stopped
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+    using: 'composite'
+    steps:
+        - run: $GITHUB_ACTION_PATH/entrypoint.sh
+          shell: bash
