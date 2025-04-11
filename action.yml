@@ -4,7 +4,7 @@ inputs:
   imagename:
     description: 'Name of the docker image'
     required: false
-    default: 'default-iName'
+    default: 'default-iName:latest'
   containername:
     description: 'Name of the docker container that gets deployed'
     required: false
