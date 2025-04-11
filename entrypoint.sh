@@ -1,7 +1,10 @@
 #!/bin/sh -l
 
+echo "image name"
 echo "$INPUT_IMAGENAME"
+echo "container name"
 echo "$INPUT_CONTAINERNAME"
+echo "restart policy"
 echo "$INPUT_RESTARTPOLICY"
 
 printenv > .env
