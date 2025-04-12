@@ -33,6 +33,6 @@ jobs:
 
 | Input | default value |
 |:----- | :------------ |
-|imagename | default-iName |
+|imagename | default-iName:latest |
 |containername | default-cName |
 |restartpolicy | unless-stopped |
