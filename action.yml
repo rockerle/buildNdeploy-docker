@@ -2,7 +2,7 @@ name: 'Rebuild and Restart a Docker Container'
 description: 'Test Github action for me that replaces a running docker container with an updated image'
 branding:
   icon: 'refresh-cw'
-  color: '#1D63ED'
+  color: 'blue'
 inputs:
   imagename:
     description: 'Name of the docker image'
