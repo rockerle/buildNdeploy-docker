@@ -1,8 +1,5 @@
 #!/bin/sh -l
 
-printenv > .env
-echo "checking Java version"
-java -version
 docker stop "$INPUT_CONTAINERNAME" || echo "No container running with that name"
 docker rm "$INPUT_CONTAINERNAME" || echo "No container found to remove"
 
