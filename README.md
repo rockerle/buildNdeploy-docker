@@ -21,18 +21,26 @@ jobs:
       - name: "Checkout Repository"
         uses: actions/checkout@v4
       - name: "My self made build and deploy"
-        uses: rockerle/buildNdeploy-docker@v1
+        uses: rockerle/buildNdeploy-docker@v2
         with:
           imagename: "rockerle/discordbot:latest"
           containername: "rockerbot"
-        env:
-          BOT_TOKEN: ${{secrets.BOT_TOKEN}}
+          dnetwork: "examplenetwork"
+          label: |
+            example-label1
+            example-label2
+          env: |
+            BOT_TOKEN=${{secrets.BOT_TOKEN}}
+            cpus='0.75'
 ```
 
-# Variables
+# Workflow Inputs
 
-| Input | default value |
-|:----- | :------------ |
-|imagename | default-iName:latest |
-|containername | default-cName |
-|restartpolicy | unless-stopped |
+| Input         | default value        |
+|:--------------|:---------------------|
+| imagename     | default-iName:latest |
+| containername | default-cName        |
+| restartpolicy | unless-stopped       |
+| dnetwork      |                      |
+| label         |                      |
+| env           |                      |
