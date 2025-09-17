@@ -41,6 +41,6 @@ jobs:
 | imagename     | default-iName:latest |
 | containername | default-cName        |
 | restartpolicy | unless-stopped       |
-| dnetwork      |                      |
-| label         |                      |
-| env           |                      |
+| dnetwork(@v2) |                      |
+| label(@v2)         |                      |
+| env(@v2)           |                      |
