@@ -17,7 +17,7 @@ if [ -n "$INPUT_ENV" ]; then
             env_args="$env_args -e $trimmed_line "
         fi
     done <<EOF
-$INPUT_ENV
+    $INPUT_ENV
 EOF
     echo "Environment arguments: $env_args"
 fi
